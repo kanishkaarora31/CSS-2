@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <style>
+    .page {
+      display: grid;
+      grid-template-columns: minmax(150px, 300px) 1fr;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      gap: 10px;
+    }
+
+    header {
+      grid-area: header;
+      background: lightblue;
+    }
+
+    aside {
+      grid-area: sidebar;
+      background: pink;
+    }
+
+    main {
+      grid-area: main;
+      background: lightgreen;
+    }
+
+    footer {
+      grid-area: footer;
+      background: plum;
+    }
+
+    /* Mobile screen */
+    @media (max-width: 600px) {
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "footer";
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>Header</header>
+    <aside>Sidebar</aside>
+    <main>Main Content</main>
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>
